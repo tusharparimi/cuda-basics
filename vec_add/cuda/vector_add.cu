@@ -1,10 +1,9 @@
-#include <time.h>
 #include <stdio.h>
 #include <stdlib.h>
 #include <assert.h>
 #include <math.h>
 
-#define N 1000000000
+#define N 10000000
 #define MAX_ERR 1e-6
 
 //  kernel func
@@ -43,11 +42,8 @@ int main()
 	cudaMemcpy(d_a, a, sizeof(float) * N, cudaMemcpyHostToDevice);
 	cudaMemcpy(d_b, b, sizeof(float) * N, cudaMemcpyHostToDevice);
 
-	clock_t t;
-	t = clock();
 	// execute kernel
 	vector_add<<< 1 , 256 >>>(d_out, d_a, d_b, N);
-	t = clock() - t;
 
 	// copy result back to host memory
 	cudaMemcpy(out, d_out, sizeof(float) * N, cudaMemcpyDeviceToHost);
@@ -68,9 +64,6 @@ int main()
 	free(a);
 	free(b);
 	free(out);
-
-	double time_taken = (((double)t)/CLOCKS_PER_SEC)*1000;
-	printf("time taken: %f ms\n", time_taken);
 
 	return 0;
 }
