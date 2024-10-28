@@ -1,0 +1,10 @@
+^C:\USERS\TUSHA\DOCUMENTS\LEARNING-CUDA\CUDA-BASICS\RGB2GRAY\CUDA\BUILD\CMAKEFILES\1D921457E461054911930EC564B74B3D\GENERATE.STAMP.RULE
+setlocal
+"C:\Program Files\CMake\bin\cmake.exe" -SC:/Users/tusha/Documents/learning-cuda/cuda-basics/rgb2gray/cuda -BC:/Users/tusha/Documents/learning-cuda/cuda-basics/rgb2gray/cuda/build --check-stamp-list CMakeFiles/generate.stamp.list --vs-solution-file C:/Users/tusha/Documents/learning-cuda/cuda-basics/rgb2gray/cuda/build/rgb2gray.sln
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal & call :cmErrorLevel %errorlevel% & goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd

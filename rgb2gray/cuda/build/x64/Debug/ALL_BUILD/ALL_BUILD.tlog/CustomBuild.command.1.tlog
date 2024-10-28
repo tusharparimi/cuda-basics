@@ -1,0 +1,10 @@
+^C:\USERS\TUSHA\DOCUMENTS\LEARNING-CUDA\CUDA-BASICS\RGB2GRAY\CUDA\CMAKELISTS.TXT
+setlocal
+"C:\Program Files\CMake\bin\cmake.exe" -SC:/Users/tusha/Documents/learning-cuda/cuda-basics/rgb2gray/cuda -BC:/Users/tusha/Documents/learning-cuda/cuda-basics/rgb2gray/cuda/build --check-stamp-file C:/Users/tusha/Documents/learning-cuda/cuda-basics/rgb2gray/cuda/build/CMakeFiles/generate.stamp
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal & call :cmErrorLevel %errorlevel% & goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd
